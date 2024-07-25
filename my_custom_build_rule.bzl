@@ -4,7 +4,6 @@ def _build_with_my_custom_rule(ctx):
     output_file = ctx.actions.declare_file("my_output.txt")
     ctx.actions.run(
         outputs = [output_file],
-        executable = ctx.executable.my_external_compiler,
         arguments = ["--version"]
     )
     return DefaultInfo(
